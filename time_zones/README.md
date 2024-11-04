@@ -106,4 +106,11 @@ Output: 10:00 AM Australia/Brisbane (11:00 AM Australia/Sydney)
 
 ### Zibra
 
+Our Zibra application is hosted on FormTitan, a Salesforce integration service.
+
+The zibra application, prior to this change, was showing the due date field in a user's local time. However, in Salesforce, all users were linked to Sydney. This field is untrusted and unused by users because of the inconsistency in timezones.
+
+This solution aims to show the expected time in FormTitan. The timezone in Formtitan will be updated per-form for users, no matter where they are, to see and edit jobs in Zibra in the time zone of the branch executing the job. FormTitan has limited customisation, so a user can't select their timezone, but this way it will ensure jobs are saved in the timezone of the branch.
+
+
 ## Known Issues & Limitations
